@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>アプリ</title>
+</head>
+<body>
+    {% if books == [] %}
+        <p>データがありません</p>
+    {% else %}
+        <table border="1">
+            <tr>
+                <th>入荷日</th>
+                <th>タイトル</th>
+                <th>金額</th>
+            </tr>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.arrival_day }}</td>
+                    <td>{{ book.price }}円</td>
+                    <td>{{ book.title }}</td>
+                </tr>
+            {% endfor %}
+        <table>
+    {% endif %}
+    <a href="{{ url_for('form') }}">登録</a>
+    <!-- <a href="{{ url_fopip -->
+</body>
+</html>
